@@ -61,6 +61,7 @@ Target hash: SHA-256("49999999")
 Result found: 49999999
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/5cdefac15cd26d75bee3578d48601a5bb4c47e22/performance_comparison%20normal.png)
+
 Figure 1: Parallel multiprocessing outperforms threading and sequential models due to true CPU parallelism.
 
 
@@ -73,6 +74,7 @@ MD5	28.50	8.90	3.20x
 Observation: MD5 is ~21% faster overall, but the parallel speedup ratio remains similar – proving that parallel gains are independent of hash algorithm.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/5cdefac15cd26d75bee3578d48601a5bb4c47e22/performance_comparison%20MD5.png)
+
 Figure 2: Parallel multiprocessing outperforms threading and sequential using MD5, diffenrent hash algorithm.
 
 C. Scaling with Fewer Workers – The --workers 2 Test
@@ -86,6 +88,7 @@ Workers	Time (s)	Speedup vs Sequential
 Observation: Doubling workers roughly doubles speed until diminishing returns due to overhead. This is a textbook example of near‑linear scaling – perfect for teaching parallel computing concepts.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/5cdefac15cd26d75bee3578d48601a5bb4c47e22/performance_comparison%202%20cpu.png)
+
 Figure 3: Parallel multiprocessing outperforms threading and sequential with 2 workers(CPU).
 
 
@@ -103,6 +106,7 @@ Change Config.TARGET_HASH to match a dictionary word (e.g., hashlib.sha256(b"adm
 Or add the number 49999999 to the dictionary list.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/2a29f1ae9f5e6943162d938bfa8373c82ac5ef64/dictionary_attack.png)
+
 Figure 4:Terminal output showing dictionary attack run with "Not found" message
 
 Why include dictionary attack?
@@ -128,6 +132,7 @@ For tiny tasks (10 passwords), overhead dominates and speedup disappears – dem
 This benchmark is ideal for live lectures because it finishes in seconds without needing huge datasets.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/2a29f1ae9f5e6943162d938bfa8373c82ac5ef64/Difficulty_benchmark.png)
+
 Figure 5:Screenshot of the difficulty benchmark output from terminal
 
 # 🧠 How It Works (The Logic)
