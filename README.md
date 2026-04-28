@@ -64,6 +64,7 @@ Result found: 49999999
     Figure 1: Parallel multiprocessing outperforms threading and sequential models due to true CPU parallelism.
 
 
+
 B. Effect of Hash Algorithm – MD5 vs SHA256
 Hash algorithms have different speeds. MD5 is generally faster than SHA256 because it uses fewer computational rounds. Running the same benchmark with --algo md5 
 
@@ -90,6 +91,7 @@ Observation: Doubling workers roughly doubles speed until diminishing returns du
     Figure 3: Parallel multiprocessing outperforms threading and sequential with 2 workers(CPU).
 
 
+
 D. Dictionary Attack – Fast Wordlist Cracking
 The dictionary attack tries common words plus simple mutations (capitalization, appending 123 or !). It is extremely fast because the search space is tiny.
 
@@ -110,8 +112,10 @@ Why include dictionary attack?
 Real‑world password cracking often starts with dictionary attacks before brute‑force – they are orders of magnitude faster when users choose weak passwords.
 
 
+
 E. Lightweight Difficulty Benchmark – Runs in Seconds
 This built‑in benchmark (--difficulty) is designed for quick demonstrations. It generates random passwords of increasing length/complexity and runs both sequential and parallel hashing.
+
 
 Command: *python parallel_hash_breaker.py --difficulty*
 
@@ -130,7 +134,8 @@ For tiny tasks (10 passwords), overhead dominates and speedup disappears – dem
 This benchmark is ideal for live lectures because it finishes in seconds without needing huge datasets.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/2a29f1ae9f5e6943162d938bfa8373c82ac5ef64/Difficulty_benchmark.png)
-Figure 5:Screenshot of the difficulty benchmark output from terminal
+        Figure 5: Screenshot of the difficulty benchmark output from terminal
+
 
 
 # 🧠 How It Works (The Logic)
