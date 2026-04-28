@@ -1,4 +1,7 @@
 # 🔓 Parallel Hash Breaker: Cracking Passwords at the Speed of Parallel Computing
+
+Name: Ahmad Nadzmi Bin Amsan 
+
 Course Code: ITT440: Network Programming
 
 Lecturer: Shahadan Bin Saad
