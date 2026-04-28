@@ -37,7 +37,7 @@ Purpose: After each benchmark run, the script automatically generates two profes
 Purpose: Shows a live, updating progress bar during the sequential crack, giving visual feedback on how many passwords have been tested and the estimated time remaining.
 
 # 🔋Run the full benchmark (sequential, threading, parallel) with default SHA256
-python3 parallel_hash_breaker.py --limit 50000000
+python parallel_hash_breaker.py --limit 50000000
 C. Extra Tasks for Deeper Analysis
 The following additional commands allow you to explore different hash algorithms, worker counts, dictionary attacks, and the lightweight difficulty benchmark.
 
@@ -61,8 +61,7 @@ Target hash: SHA-256("49999999")
 Result found: 49999999
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/5cdefac15cd26d75bee3578d48601a5bb4c47e22/performance_comparison%20normal.png)
-
-Figure 1: Parallel multiprocessing outperforms threading and sequential models due to true CPU parallelism.
+    Figure 1: Parallel multiprocessing outperforms threading and sequential models due to true CPU parallelism.
 
 
 B. Effect of Hash Algorithm – MD5 vs SHA256
@@ -74,8 +73,8 @@ MD5	28.50	8.90	3.20x
 Observation: MD5 is ~21% faster overall, but the parallel speedup ratio remains similar – proving that parallel gains are independent of hash algorithm.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/5cdefac15cd26d75bee3578d48601a5bb4c47e22/performance_comparison%20MD5.png)
+    Figure 2: Parallel multiprocessing outperforms threading and sequential using MD5, diffenrent hash algorithm.
 
-Figure 2: Parallel multiprocessing outperforms threading and sequential using MD5, diffenrent hash algorithm.
 
 C. Scaling with Fewer Workers – The --workers 2 Test
 Not all environments have 8 cores. Running with only 2 workers (--workers 2) shows how speedup scales with fewer resources:
@@ -88,8 +87,7 @@ Workers	Time (s)	Speedup vs Sequential
 Observation: Doubling workers roughly doubles speed until diminishing returns due to overhead. This is a textbook example of near‑linear scaling – perfect for teaching parallel computing concepts.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/5cdefac15cd26d75bee3578d48601a5bb4c47e22/performance_comparison%202%20cpu.png)
-
-Figure 3: Parallel multiprocessing outperforms threading and sequential with 2 workers(CPU).
+    Figure 3: Parallel multiprocessing outperforms threading and sequential with 2 workers(CPU).
 
 
 D. Dictionary Attack – Fast Wordlist Cracking
@@ -106,11 +104,11 @@ Change Config.TARGET_HASH to match a dictionary word (e.g., hashlib.sha256(b"adm
 Or add the number 49999999 to the dictionary list.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/2a29f1ae9f5e6943162d938bfa8373c82ac5ef64/dictionary_attack.png)
-
-Figure 4:Terminal output showing dictionary attack run with "Not found" message
+    Figure 4:Terminal output showing dictionary attack run with "Not found" message
 
 Why include dictionary attack?
 Real‑world password cracking often starts with dictionary attacks before brute‑force – they are orders of magnitude faster when users choose weak passwords.
+
 
 E. Lightweight Difficulty Benchmark – Runs in Seconds
 This built‑in benchmark (--difficulty) is designed for quick demonstrations. It generates random passwords of increasing length/complexity and runs both sequential and parallel hashing.
@@ -132,8 +130,8 @@ For tiny tasks (10 passwords), overhead dominates and speedup disappears – dem
 This benchmark is ideal for live lectures because it finishes in seconds without needing huge datasets.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/2a29f1ae9f5e6943162d938bfa8373c82ac5ef64/Difficulty_benchmark.png)
-
 Figure 5:Screenshot of the difficulty benchmark output from terminal
+
 
 # 🧠 How It Works (The Logic)
 The Parallel Hash Breaker implements three distinct cracking models and a difficulty benchmark, all following a MapReduce‑inspired pattern:
