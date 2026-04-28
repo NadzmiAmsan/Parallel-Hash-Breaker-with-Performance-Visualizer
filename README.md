@@ -14,19 +14,7 @@ In password security auditing, time is the only barrier between a hash and its p
 The Parallel Hash Breaker is a high‑performance cryptographic cracker that leverages multiprocessing, threading, and sequential models to demonstrate real‑world parallel computing concepts. By distributing password attempts across all available CPU cores, it transforms a standard laptop into a password‑recovery powerhouse, achieving over 3x speedup on intensive workloads while generating professional performance graphs.
 
 # 📁 Project Overview
-The Parallel Hash Breaker is a Python‑based tool designed to teach and demonstrate the differences between sequential, threaded, and parallel (multiprocessing) execution for CPU‑bound tasks – specifically password hashing.
-
-Key components of this project:
-
-Component	Description
-Sequential cracker	Baseline – one loop, one core.
-Threaded cracker	Uses Python threads – shows Global Interpreter Lock (GIL) limitations.
-Parallel cracker	Uses multiprocessing.Pool – true parallel execution across CPU cores.
-Dictionary attack	Tries common words + mutations (capitalisation, 123, !).
-Difficulty benchmark	Lightweight test (100k very easy … 10 very hard) – runs in seconds.
-Auto‑generated graphs	Creates performance_comparison.png and scaling_plot.png using matplotlib.
-Why this project matters:
-Understanding parallelism is critical for modern cybersecurity and data processing. A security analyst who can parallelise log analysis, hash cracking, or pattern matching gains a decisive speed advantage. This project provides a hands‑on, visual, and quantitative comparison of three execution models, making abstract concepts like the GIL and process‑based parallelism tangible
+The Parallel Hash Breaker is a Python‑based tool designed to teach and demonstrate the differences between sequential, threaded, and parallel (multiprocessing) execution for CPU‑bound tasks specifically password hashing. Understanding parallelism is critical for modern cybersecurity and data processing. A security analyst who can parallelise log analysis, hash cracking, or pattern matching gains a decisive speed advantage. This project provides a hands‑on, visual, and quantitative comparison of three execution models, making abstract concepts like the GIL and process‑based parallelism tangible
 
 # 💻 Hardware & Environment
 Processor: Quad‑Core / Octa‑Core CPU (e.g., Intel i5‑8250U @ 1.60GHz)
