@@ -29,10 +29,10 @@ C. Extra Tasks for Deeper Analysis
 The following additional commands allow you to explore different hash algorithms, worker counts, dictionary attacks, and the lightweight difficulty benchmark.
 
 **Task	Command**
-1. Switch to MD5 algorithm	python3 parallel_hash_breaker.py --algo md5 --limit 50000000
-2. Use fewer workers (e.g., 2)	python3 parallel_hash_breaker.py --workers 2 --limit 50000000
-3. Run dictionary attack	python3 parallel_hash_breaker.py --dict
-4. Run difficulty benchmark (fast demo)	python3 parallel_hash_breaker.py --difficulty
+1. Switch to MD5 algorithm:	*python parallel_hash_breaker.py --algo md5*
+2. Use fewer workers: *python parallel_hash_breaker.py --workers2*
+3. Run dictionary attack:	*python3 parallel_hash_breaker.py --dict*
+4. Run difficulty benchmark: *python parallel_hash_breaker.py --difficulty*
 
 
 # 📊 Battlefield Analytics
@@ -52,7 +52,7 @@ Figure 1: Parallel multiprocessing outperforms threading and sequential models d
 
 
 B. Effect of Hash Algorithm – MD5 vs SHA256
-Hash algorithms have different speeds. MD5 is generally faster than SHA256 because it uses fewer computational rounds. Running the same benchmark with --algo md5 shows this difference:
+Hash algorithms have different speeds. MD5 is generally faster than SHA256 because it uses fewer computational rounds. Running the same benchmark with --algo md5 
 
 Algorithm	Sequential Time (s)	Parallel Time (8 cores)	Speedup
 SHA256	36.14	11.34	3.19x
@@ -73,13 +73,13 @@ Workers	Time (s)	Speedup vs Sequential
 Observation: Doubling workers roughly doubles speed until diminishing returns due to overhead. This is a textbook example of near‑linear scaling – perfect for teaching parallel computing concepts.
 
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/5cdefac15cd26d75bee3578d48601a5bb4c47e22/performance_comparison%202%20cpu.png)
-Figure 3: Parallel multiprocessing outperforms threading and sequential with fewer CPUs.
+Figure 3: Parallel multiprocessing outperforms threading and sequential with 2 workers(CPU).
 
 
 D. Dictionary Attack – Fast Wordlist Cracking
 The dictionary attack tries common words plus simple mutations (capitalization, appending 123 or !). It is extremely fast because the search space is tiny.
 
-Command: python3 parallel_hash_breaker.py --dict
+Command: *python parallel_hash_breaker.py --dict*
 
 Dictionary Size	Mutations per Word	Candidates Tested	Result	Time
 5 base words	20 total	20	Not found (default)	0.0004 s
@@ -98,7 +98,7 @@ Real‑world password cracking often starts with dictionary attacks before brute
 E. Lightweight Difficulty Benchmark – Runs in Seconds
 This built‑in benchmark (--difficulty) is designed for quick demonstrations. It generates random passwords of increasing length/complexity and runs both sequential and parallel hashing.
 
-Command: python3 parallel_hash_breaker.py --difficulty
+Command: *python parallel_hash_breaker.py --difficulty*
 
 Level	Passwords	Algorithm	Password Len	Sequential (s)	Parallel (s)	Speedup
 very_easy	100,000	md5	4	0.48	0.19	2.53x
@@ -117,7 +117,7 @@ This benchmark is ideal for live lectures because it finishes in seconds without
 ![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/2a29f1ae9f5e6943162d938bfa8373c82ac5ef64/Difficulty_benchmark.png)
 Figure 5:Screenshot of the difficulty benchmark output from terminal
 
-#🧠 5. How It Works (The Logic)
+# 🧠 How It Works (The Logic)
 The Parallel Hash Breaker implements three distinct cracking models and a difficulty benchmark, all following a MapReduce‑inspired pattern:
 
 1. Sequential (Baseline)
@@ -128,7 +128,7 @@ Analyze: Single core hashes each number one by one.
 Synthesize: Returns first match.
 
 2. Threading (GIL Demonstration)
-Partition: Search space divided among N threads.
+Partition: Search space divided among the threads.
 
 Analyze: Each thread runs Python code concurrently – but the Global Interpreter Lock (GIL) allows only one thread to execute Python bytecode at a time.
 
@@ -150,7 +150,7 @@ Analyze: Sequential version hashes each password one by one. Parallel version di
 
 Result: Even though each task is tiny, the overhead of multiprocessing is offset by true parallelism for medium/large counts.
 
-#✅ 6. Conclusion
+# ✅ Conclusion
 The Parallel Hash Breaker successfully demonstrates:
 
 True parallelism using Python's multiprocessing module.
