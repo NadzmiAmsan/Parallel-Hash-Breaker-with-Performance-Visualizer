@@ -25,11 +25,11 @@ OS: Linux Environment (Ubuntu 22.04+ recommended)
 
 Runtime: Python 3.8+ with matplotlib for analytics and tqdm for real‑time progress bars.
 
-# Install required libraries
+# 🛠️ Install required libraries
 pip install tqdm 
 pip install matplotlib
 
-# Run the full benchmark (sequential, threading, parallel) with default SHA256
+# 🔋Run the full benchmark (sequential, threading, parallel) with default SHA256
 python3 parallel_hash_breaker.py --limit 50000000
 C. Extra Tasks for Deeper Analysis
 The following additional commands allow you to explore different hash algorithms, worker counts, dictionary attacks, and the lightweight difficulty benchmark.
