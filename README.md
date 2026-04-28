@@ -20,10 +20,8 @@ OS: Linux Environment (Ubuntu 22.04+ recommended)
 
 Runtime: Python 3.8+ with matplotlib for analytics and tqdm for real‑time progress bars.
 
-Disclaimer
-The target hash is pre‑configured to match a number near the end of the search space (49,999,999), ensuring meaningful benchmark times without infinite loops. You can modify Config.TARGET_HASH to test custom values.
 
-🛠️ 3. Deployment Guide
+#🛠️ 3. Deployment Guide
 A. System Ignition
 bash
 # Create a new project folder
@@ -52,7 +50,7 @@ Run dictionary attack	python3 parallel_hash_breaker.py --dict
 Run difficulty benchmark (fast demo)	python3 parallel_hash_breaker.py --difficulty
 [INSERT IMAGE: Screenshot showing terminal with all these commands executed]
 
-📊 4. Battlefield Analytics
+# 📊 4. Battlefield Analytics
 A. Single Large Task (50 Million Hashes) – Default SHA256
 When cracking a SHA‑256 hash positioned near the end of a 50‑million number space, the engine produces the following performance breakdown:
 
