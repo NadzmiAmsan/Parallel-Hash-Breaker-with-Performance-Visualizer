@@ -49,7 +49,7 @@ The following additional commands allow you to explore different hash algorithms
 
 
 # 📊 Battlefield Analytics
-A. Single Large Task (50 Million Hashes) – Default SHA256
+**A. Single Large Task** (50 Million Hashes) – Default SHA256
 When cracking a SHA‑256 hash positioned near the end of a 50‑million number space, the engine produces the following performance breakdown:
 
 Method	Time (seconds)	Speedup vs Sequential
@@ -65,7 +65,7 @@ Result found: 49999999
 
 
 
-B. Effect of Hash Algorithm – MD5 vs SHA256
+**B. Effect of Hash Algorithm** – MD5 vs SHA256
 Hash algorithms have different speeds. MD5 is generally faster than SHA256 because it uses fewer computational rounds. Running the same benchmark with --algo md5 
 
 Algorithm	Sequential Time (s)	Parallel Time (8 cores)	Speedup
@@ -77,7 +77,7 @@ Observation: MD5 is ~21% faster overall, but the parallel speedup ratio remains 
     Figure 2: Parallel multiprocessing outperforms threading and sequential using MD5, diffenrent hash algorithm.
 
 
-C. Scaling with Fewer Workers – The --workers 2 Test
+**C. Scaling with Fewer Workers** – The --workers 2 Test
 Not all environments have 8 cores. Running with only 2 workers (--workers 2) shows how speedup scales with fewer resources:
 
 Workers	Time (s)	Speedup vs Sequential
@@ -92,7 +92,7 @@ Observation: Doubling workers roughly doubles speed until diminishing returns du
 
 
 
-D. Dictionary Attack – Fast Wordlist Cracking
+**D. Dictionary Attack** – Fast Wordlist Cracking
 The dictionary attack tries common words plus simple mutations (capitalization, appending 123 or !). It is extremely fast because the search space is tiny.
 
 Command: *python parallel_hash_breaker.py --dict*
@@ -113,7 +113,7 @@ Real‑world password cracking often starts with dictionary attacks before brute
 
 
 
-E. Lightweight Difficulty Benchmark – Runs in Seconds
+**E. Lightweight Difficulty Benchmark** – Runs in Seconds
 This built‑in benchmark (--difficulty) is designed for quick demonstrations. It generates random passwords of increasing length/complexity and runs both sequential and parallel hashing.
 
 
