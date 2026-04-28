@@ -1,16 +1,16 @@
-#🔓**1. Parallel Hash Breaker: Cracking Passwords at the Speed of Parallel Computing
-Course Code: ITT440: Network Programming**
+# 🔓 Parallel Hash Breaker: Cracking Passwords at the Speed of Parallel Computing
+Course Code: ITT440: Network Programming
 
 Lecturer: Shahadan Bin Saad
 
 Youtube Link : https://www.youtube.com/watch?v=EzCX8cD6PAc&t=6s
 
-#🎯 Mission Objective
+# 🎯 Mission Objective
 In password security auditing, time is the only barrier between a hash and its plaintext. Traditional brute‑force methods test one password at a time, making complex cracking attempts painfully slow.
 
 The Parallel Hash Breaker is a high‑performance cryptographic cracker that leverages multiprocessing, threading, and sequential models to demonstrate real‑world parallel computing concepts. By distributing password attempts across all available CPU cores, it transforms a standard laptop into a password‑recovery powerhouse, achieving over 3x speedup on intensive workloads while generating professional performance graphs.
 
-#💻 Hardware & Environment
+# 💻 Hardware & Environment
 Processor: Quad‑Core / Octa‑Core CPU (e.g., Intel i5‑8250U @ 1.60GHz)
 
 Memory: 8GB RAM minimum
@@ -28,14 +28,14 @@ python3 parallel_hash_breaker.py --limit 50000000
 C. Extra Tasks for Deeper Analysis
 The following additional commands allow you to explore different hash algorithms, worker counts, dictionary attacks, and the lightweight difficulty benchmark.
 
-Task	Command
-Switch to MD5 algorithm	python3 parallel_hash_breaker.py --algo md5 --limit 50000000
-Use fewer workers (e.g., 2)	python3 parallel_hash_breaker.py --workers 2 --limit 50000000
-Run dictionary attack	python3 parallel_hash_breaker.py --dict
-Run difficulty benchmark (fast demo)	python3 parallel_hash_breaker.py --difficulty
-[INSERT IMAGE: Screenshot showing terminal with all these commands executed]
+**Task	Command**
+1. Switch to MD5 algorithm	python3 parallel_hash_breaker.py --algo md5 --limit 50000000
+2. Use fewer workers (e.g., 2)	python3 parallel_hash_breaker.py --workers 2 --limit 50000000
+3. Run dictionary attack	python3 parallel_hash_breaker.py --dict
+4. Run difficulty benchmark (fast demo)	python3 parallel_hash_breaker.py --difficulty
 
-# 📊 4. Battlefield Analytics
+
+# 📊 Battlefield Analytics
 A. Single Large Task (50 Million Hashes) – Default SHA256
 When cracking a SHA‑256 hash positioned near the end of a 50‑million number space, the engine produces the following performance breakdown:
 
