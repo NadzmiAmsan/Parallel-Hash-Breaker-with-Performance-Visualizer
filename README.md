@@ -26,8 +26,13 @@ OS: Linux Environment (Ubuntu 22.04+ recommended)
 Runtime: Python 3.8+ with matplotlib for analytics and tqdm for real‑time progress bars.
 
 # 🛠️ Install required libraries
-pip install tqdm 
-pip install matplotlib
+The Parallel Hash Breaker uses two optional but highly recommended libraries:
+
+1. matplotlib – Automatic Graph Generation
+Purpose: After each benchmark run, the script automatically generates two professional‑grade graph.
+
+2. tqdm – Real‑time Progress Bars
+Purpose: Shows a live, updating progress bar during the sequential crack, giving visual feedback on how many passwords have been tested and the estimated time remaining.
 
 # 🔋Run the full benchmark (sequential, threading, parallel) with default SHA256
 python3 parallel_hash_breaker.py --limit 50000000
