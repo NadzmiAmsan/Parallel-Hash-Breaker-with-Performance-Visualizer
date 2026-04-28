@@ -105,7 +105,8 @@ Change Config.TARGET_HASH to match a dictionary word (e.g., hashlib.sha256(b"adm
 
 Or add the number 49999999 to the dictionary list.
 
-![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/2a29f1ae9f5e6943162d938bfa8373c82ac5ef64/dictionary_attack.png)
+![image alt](https://github.com/NadzmiAmsan/Parallel-Hash-Breaker-with-Performance-Visualizer/blob/2a29f1ae9f5e6943162d938bfa8373c82ac5ef64/dictionary_attack.png) 
+
     Figure 4:Terminal output showing dictionary attack run with "Not found" message
 
 Why include dictionary attack?
